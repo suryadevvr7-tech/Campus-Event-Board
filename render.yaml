@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: campus-event-board
+    runtime: node
+    buildCommand: npm run ci:all && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.18.0
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "campus-event-board",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A campus events discovery and organizer platform built with MERN.",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server test && npm --prefix client test",
+    "test:server": "npm --prefix server test",
+    "test:client": "npm --prefix client test",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "ci:all": "npm ci && npm --prefix server ci && npm --prefix client ci",
+    "seed": "npm --prefix server run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
